@@ -41,11 +41,11 @@ public class JwtService {
         return extractClaim(token, Claims::getSubject);
     }
 
-    protected String generateToken(UserDetails user) {
+    public String generateToken(UserDetails user) {
         return generateToken(user, new HashMap<>());
     }
 
-    protected String generateToken(UserDetails user, Map<String, Object> extraClaims) {
+    public String generateToken(UserDetails user, Map<String, Object> extraClaims) {
         return Jwts.builder()
                 .subject(user.getUsername())
                 .issuedAt(new Date())

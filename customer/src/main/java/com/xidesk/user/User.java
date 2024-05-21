@@ -6,11 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
-import java.util.List;
 
 @Data
 @Builder
@@ -36,6 +34,11 @@ public class User implements UserDetails {
     @Override
     public String getUsername() {
         return email;
+    }
+
+    public boolean isValid() {
+        return this.email == null || this.email.isEmpty() || this.email.isBlank() ||
+                this.password == null || this.password.isEmpty() || this.password.isBlank();
     }
 
     //Not in use

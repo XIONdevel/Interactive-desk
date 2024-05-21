@@ -1,0 +1,16 @@
+D:\Interactive Deck\customer\src\main\java\com\xidesk\user\Role.java
+D:\Interactive Deck\customer\src\main\java\com\xidesk\security\AuthenticationConfig.java
+D:\Interactive Deck\customer\src\main\java\com\xidesk\security\JwtFilter.java
+D:\Interactive Deck\customer\src\main\java\com\xidesk\user\UserRepository.java
+D:\Interactive Deck\customer\src\main\java\com\xidesk\security\request\AuthenticationRequest.java
+D:\Interactive Deck\customer\src\main\java\com\xidesk\user\UserService.java
+D:\Interactive Deck\customer\src\main\java\com\xidesk\security\authentication\AuthenticationResponse.java
+D:\Interactive Deck\customer\src\main\java\com\xidesk\security\authentication\AuthenticationService.java
+D:\Interactive Deck\customer\src\main\java\com\xidesk\security\request\RegistrationRequest.java
+D:\Interactive Deck\customer\src\main\java\com\xidesk\user\Permission.java
+D:\Interactive Deck\customer\src\main\java\com\xidesk\security\authentication\AuthenticationController.java
+D:\Interactive Deck\customer\src\main\java\com\xidesk\exception\UserNotFoundException.java
+D:\Interactive Deck\customer\src\main\java\com\xidesk\security\JwtService.java
+D:\Interactive Deck\customer\src\main\java\com\xidesk\user\User.java
+D:\Interactive Deck\customer\src\main\java\com\xidesk\Main.java
+D:\Interactive Deck\customer\src\main\java\com\xidesk\security\SecurityConfig.java

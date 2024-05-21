@@ -23,12 +23,27 @@ public class UserService implements UserDetailsService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public User loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<User> optionalUser = userRepository.findUserByEmail(username);
         if (optionalUser.isEmpty()) {
             logger.warn("User '{}' not found", username);
-            throw new UserNotFoundException("User '" + username + "' not found");
+            throw new UserNotFoundException(String.format("User %s not found", username));
         }
         return optionalUser.get();
     }
+
+
+    public User saveUser(User user) {
+        if (!user.isValid()) {
+            logger.warn("Given user is not valid");
+            throw new NullPointerException("Given user is not valid");
+        }
+        return userRepository.save(user);
+    }
+
+
+
+
+
+
 }

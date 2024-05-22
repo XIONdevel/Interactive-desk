@@ -17,7 +17,7 @@ spring:
   kafka:
     bootstrap-servers: localhost:9092
     consumer:
-      group-id: customer-service
+      group-id: desk-service
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
@@ -29,9 +29,3 @@ spring:
             producer:
               key-serializer: org.apache.kafka.common.serialization.StringSerializer
               value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-
-security:
-  secret-key: F/tfR/hN4CIkrsg6OHPT5ZfMJH0wPVzr9NPCZtD62Mw=
-  expiration: 60480000 #miliseconds
-
-

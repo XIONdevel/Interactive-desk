@@ -21,7 +21,7 @@ public class AuthenticationController {
         this.authenticationService = authenticationService;
     }
 
-    @PostMapping()
+//    @PostMapping()
     public ResponseEntity<Void> authenticate(
             HttpServletResponse response,
             @RequestBody AuthenticationRequest authentication
@@ -30,7 +30,7 @@ public class AuthenticationController {
         return ResponseEntity.status(200).build();
     }
 
-    @PostMapping()
+//    @PostMapping()
     public ResponseEntity<Void> registration(
             HttpServletResponse response,
             @RequestBody RegistrationRequest request

@@ -1,11 +1,9 @@
-package com.xidesk.security;
+package com.xidesk.security.jwt;
 
 
-import com.xidesk.user.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.slf4j.Logger;
@@ -23,9 +21,9 @@ import java.util.function.Function;
 @Service
 public class JwtService {
     @Value("${security.secret-key}")
-    private static String SECRET;
+    private String SECRET;
     @Value("${security.expiration}")
-    private static Long expiration;
+    private Long expiration;
     private static final Logger logger = LoggerFactory.getLogger(JwtService.class);
 
     public String extractJwt(String header) {
@@ -51,7 +49,7 @@ public class JwtService {
                 .issuedAt(new Date())
                 .expiration(new Date(expiration))
                 .claims(extraClaims)
-                .signWith(getSecretKey())
+                .signWith(getSignInKey())
                 .compact();
     }
 
@@ -62,7 +60,7 @@ public class JwtService {
 
     protected Claims extractAllClaims(String token) {
         return Jwts.parser()
-                .decryptWith(getSecretKey())
+                .decryptWith(getSignInKey())
                 .build()
                 .parseEncryptedClaims(token)
                 .getPayload();
@@ -74,14 +72,14 @@ public class JwtService {
     }
 
     private boolean isTokenExpired(String token) {
-        final Date expiration = extractClaim(token, Claims::getExpiration);
-        return expiration.before(new Date());
+        return extractExpiration(token).before(new Date());
     }
 
-    private SecretKey getSecretKey() {
+    private Date extractExpiration(String token) {
+        return extractClaim(token, Claims::getExpiration);
+    }
+
+    private SecretKey getSignInKey() {
         return Keys.hmacShaKeyFor(Decoders.BASE64.decode(SECRET));
     }
-
-
-
 }

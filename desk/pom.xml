@@ -11,8 +11,8 @@
     </parent>
 
     <packaging>jar</packaging>
-    <artifactId>customer</artifactId>
-    <name>customer</name>
+    <artifactId>desk</artifactId>
+    <name>desk</name>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -22,19 +22,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt-api</artifactId>
-            <version>0.12.5</version>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.17.1</version>
         </dependency>
     </dependencies>
 
@@ -52,7 +42,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>com.xidesk.CustomerApplication</mainClass>
+                    <mainClass>com.xidesk.DeskApplication</mainClass>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
@@ -63,4 +53,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

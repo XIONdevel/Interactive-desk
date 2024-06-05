@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DeskService.iml" filepath="$PROJECT_DIR$/DeskService.iml" />
-      <module fileurl="file://$PROJECT_DIR$/customer.iml" filepath="$PROJECT_DIR$/customer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services/desk/desk.iml" filepath="$PROJECT_DIR$/services/desk/desk.iml" />
     </modules>
   </component>
 </project>

@@ -36,6 +36,10 @@ public class MainService {
         return false;
     }
 
+    public DeskEntity saveDesk(DeskEntity desk) {
+        return deskRepository.save(desk);
+    }
+
     public boolean deleteDesk(Long userId, Long deskId) {
         if (deleteObjectsForDesk(userId, deskId)) {
             deskRepository.deleteById(deskId);

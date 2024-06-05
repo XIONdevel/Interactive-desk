@@ -1,32 +1,19 @@
-#server:
-#  port: 8080
-
-logging:
-  level:
-    root: INFO
-  logback:
-    rollingpolicy:
-      max-file-size: 20MB
-      max-history: 1
-
-
 spring:
   datasource:
-    url: ${SPRING_DATASOURCE_URL}
     password: ${SPRING_DATASOURCE_PASSWORD}
     username: ${SPRING_DATASOURCE_USERNAME}
-#  jpa:
-#    show-sql: true
-#    properties:
-#      hibernate:
-#        format_sql: true
-#    hibernate:
-#      ddl-auto: none
-#    open-in-view: false
+    url: ${SPRING_DATASOURCE_URL}
+#    password: postgres
+#    username: postgres
+#    url: jdbc:postgresql://localhost:5432/desk
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
 #  kafka:
 #    bootstrap-servers: localhost:9092
 #    consumer:
-#      group-id: customer-service
+#      group-id: desk-service
 #      auto-offset-reset: earliest
 #      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 #      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
@@ -38,9 +25,10 @@ spring:
 #            producer:
 #              key-serializer: org.apache.kafka.common.serialization.StringSerializer
 #              value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-
-security:
-  secret-key: F/tfR/hN4CIkrsg6OHPT5ZfMJH0wPVzr9NPCZtD62Mw=
-  expiration: 60480000 #miliseconds
-
-
+logging:
+  level:
+    root: INFO
+  logback:
+    rollingpolicy:
+      max-file-size: 20MB
+      max-history: 1

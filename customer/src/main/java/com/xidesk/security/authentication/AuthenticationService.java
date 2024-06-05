@@ -1,12 +1,11 @@
 package com.xidesk.security.authentication;
 
-import com.xidesk.security.JwtService;
+import com.xidesk.security.jwt.JwtService;
 import com.xidesk.security.request.AuthenticationRequest;
 import com.xidesk.security.request.RegistrationRequest;
 import com.xidesk.user.Role;
 import com.xidesk.user.User;
 import com.xidesk.user.UserService;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

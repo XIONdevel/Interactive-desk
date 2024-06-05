@@ -24,8 +24,8 @@ public class ObjectEntity implements Serializable {
     @Id
     @GeneratedValue
     private Long id;
-    @Column(name = "desk_id")
     @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "desk_id")
     private DeskEntity deskId;
     private String name;
     private int position_x;

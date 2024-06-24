@@ -34,8 +34,10 @@ public class JwtFilter extends OncePerRequestFilter {
             @NonNull HttpServletResponse response,
             @NonNull FilterChain filterChain
     ) throws ServletException, IOException {
+        logger.info("Jwt filter entrance");
+        logger.info(request.getPathInfo());
         final String header = request.getHeader("Authorization");
-        if (header.isBlank() || header.isEmpty()) {
+        if (header == null) {
             logger.debug("Header is empty, passing filter");
             filterChain.doFilter(request, response);
             return;

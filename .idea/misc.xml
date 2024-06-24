@@ -19,6 +19,7 @@
         <option value="$PROJECT_DIR$/Storage/pom.xml" />
         <option value="$PROJECT_DIR$/dask/pom.xml" />
         <option value="$PROJECT_DIR$/service/pom.xml" />
+        <option value="$PROJECT_DIR$/test/pom.xml" />
       </set>
     </option>
   </component>

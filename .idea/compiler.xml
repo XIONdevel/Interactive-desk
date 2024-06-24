@@ -7,7 +7,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="test" />
         <module name="desk" />
         <module name="customer" />
       </profile>
@@ -15,9 +14,9 @@
     <bytecodeTargetLevel>
       <module name="dask" target="17" />
       <module name="deskBackend" target="17" />
-      <module name="Interactive Desk" target="17" />
       <module name="service" target="17" />
       <module name="Storage" target="17" />
+      <module name="test" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
